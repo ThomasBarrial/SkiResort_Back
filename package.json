@@ -1,7 +1,7 @@
 {
-  "name": "express-quests",
+  "name": "q",
   "repository": {
-    "url": "https://github.com/WildCodeSchool/Express-Quests"
+    "url": "git+https://github.com/WildCodeSchool/Express-Quests.git"
   },
   "version": "0.0.1",
   "main": "app.js",
@@ -18,5 +18,10 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "description": "This repo is used for Wild Code School Express quests",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/Express-Quests/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/Express-Quests#readme"
 }
