@@ -13,6 +13,8 @@ connection.connect((err) => {
 });
 
 app.get('/api/MyWave', (req, res) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+     
   connection.query('SELECT * FROM SurfSpot', (err, result) => {
     if (err) {
       res.status(500).send('Error retrieving data from database');
@@ -22,6 +24,12 @@ app.get('/api/MyWave', (req, res) => {
   });
 });
 
+
+
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+
+
