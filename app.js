@@ -15,11 +15,10 @@ connection.connect((err) => {
   }
 });
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
+
 app.get('/api/MyWave/', (req, res) => {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-     
   connection.query('SELECT * FROM SurfSpot', (err, result) => {
     if (err) {
       res.status(500).send('Error retrieving data from database');
@@ -30,7 +29,6 @@ app.get('/api/MyWave/', (req, res) => {
 });
 
 app.get('/api/MyWave/:id', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
   const spotId = req.params.id
  
 connection.query('SELECT * FROM SurfSpot WHERE id = ?' ,[spotId], (err, result) => {
@@ -45,7 +43,6 @@ if (err) {
 
 
 app.post('/api/MyWave/', (req, res) => {
-  res.setHeader('Acces-Control-Allow-Origin', '*');
   const {  name, photo, description, webcam, condition, niveaux_ID, break_ID, lieu, acces_ID } = req.body
   connection.query(
     'INSERT INTO `SurfSpot` (`name`, `photo`, `description`, `webcam`, `condition`, `niveaux_ID`, `break_ID`, `lieu`, `acces_ID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
